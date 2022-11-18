@@ -1,0 +1,31 @@
+body{
+    background-color: #a75bee;
+    color: whitesmoke;
+}
+
+header{
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+}
+
+/*i{
+    background-color: #50d150;
+}*/
+
+input{
+    height: 40px;
+    width: 700px;
+    border-style: ridge;
+}
+
+.searchbar{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.column{
+    color: black;
+}
