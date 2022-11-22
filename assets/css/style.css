@@ -46,7 +46,6 @@ input{
 section p{
     text-align: center;
     color: black;
-<<<<<<< HEAD
 }
 
 .game-info {
@@ -80,7 +79,6 @@ section p{
     font-size: 30px;
     padding: 20px;
   }
-=======
     font-size: 32px;
 }
 
@@ -99,4 +97,3 @@ section p{
 .card-content:hover{
     box-shadow: 0 16px 32px 0 rgb(0, 0, 0, 0.2);
 }
->>>>>>> f0d224970ef5dd61871c607d744bd1b5df055fdb
