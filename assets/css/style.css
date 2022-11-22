@@ -1,6 +1,6 @@
 body{
     background-color: #a75bee;
-    color: whitesmoke;
+    color: black;
 }
 
 header{
@@ -8,6 +8,23 @@ header{
     text-align: center;
     font-size: 50px;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header button{
+    background-color: #a75bee;
+    border:none;
+    padding-right: 30px;
+}
+
+span{
+    display: none;
+}
+
+header button:hover span{
+   display: block;
 }
 
 /*i{
@@ -26,8 +43,10 @@ input{
     justify-content: center;
 }
 
-.column{
+section p{
+    text-align: center;
     color: black;
+<<<<<<< HEAD
 }
 
 .game-info {
@@ -61,3 +80,23 @@ input{
     font-size: 30px;
     padding: 20px;
   }
+=======
+    font-size: 32px;
+}
+
+.card-content{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    padding top: 25px;
+    pading bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.card-content:hover{
+    box-shadow: 0 16px 32px 0 rgb(0, 0, 0, 0.2);
+}
+>>>>>>> f0d224970ef5dd61871c607d744bd1b5df055fdb
