@@ -7,3 +7,25 @@ var twitchPopAPI = {
     };
     
 
+var gameInputEL = document.querySelector('#searchbar');
+var cardContentEl = document.querySelector('#card-content')
+
+
+
+var getGamePop = function (Game) {
+    var twitchURL = 'https://twitch-game-popularity.p.rapidapi.com/game?name=' + Game + '&year=2022';
+
+    fetch(twitchURL, twitchPopAPI)
+	.then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                displayGame(data, Game);
+            });
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    });
+
+};
+
+
