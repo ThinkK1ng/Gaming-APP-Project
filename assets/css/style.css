@@ -1,6 +1,6 @@
 body{
     background-color: #a75bee;
-    color: whitesmoke;
+    color: black;
 }
 
 header{
@@ -8,10 +8,23 @@ header{
     text-align: center;
     font-size: 50px;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header button{
     background-color: #a75bee;
+    border:none;
+    padding-right: 30px;
+}
+
+span{
+    display: none;
+}
+
+header button:hover span{
+   display: block;
 }
 
 /*i{
