@@ -29,3 +29,35 @@ input{
 .column{
     color: black;
 }
+
+.game-info {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    gap: 2.5rem;
+    margin-left: 65px;
+  }
+  
+  .game-info-img {
+    height: 37.5rem;
+    width: 37.5rem;
+  }
+
+  .price-info {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 65px;
+  }
+
+  .price-info h2 {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+  }
