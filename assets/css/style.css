@@ -27,10 +27,6 @@ header button:hover span{
    display: block;
 }
 
-/*i{
-    background-color: #50d150;
-}*/
-
 input{
     height: 40px;
     width: 700px;
@@ -79,21 +75,18 @@ section p{
     font-size: 30px;
     padding: 20px;
   }
-    font-size: 32px;
-}
 
 .card-content{
     display: flex;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.5s;
-    padding top: 25px;
-    pading bottom: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
     width: 500px;
 }
-
 .card-content:hover{
     box-shadow: 0 16px 32px 0 rgb(0, 0, 0, 0.2);
 }
