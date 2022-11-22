@@ -13,19 +13,19 @@ var gamePricesAPI = {
 
 var getGame = function() {
     var queryString = document.location.search;
-    var Game = queryString.split('=')[1];
+    var gameName = queryString.split('=')[1];
 
-    if (Game) {
-        gameNameEL.textContent = Game;
-        getGamePrices(Game);
+    if (gameName) {
+        gameNameEL.textContent = gameName;
+        getGamePrices(gameName);
     } else {
         document.location.replace('./index.html');
     }
 };
 
 
-var getGamePrices = function(game) {
-    var PricesURL = 'https://game-prices.p.rapidapi.com/games?title=' + game + '&region=us&limit=10';
+var getGamePrices = function(gameName) {
+    var PricesURL = 'https://game-prices.p.rapidapi.com/games?title=' + gameName + '&region=us&limit=10';
     fetch(PricesURL).then(function (response) {
         if (response.ok) {
             response.json()
