@@ -8,24 +8,31 @@ var twitchPopAPI = {
     
 
 var gameInputEL = document.querySelector('#searchbar');
-var cardContentEl = document.querySelector('#card-content')
+var cardContentEl = document.querySelector('.card-content');
+console.log(cardContentEl);
+var gameHandler = function init() {
+    if (cardContentEl) {
+        var gameSearch = cardContentEl.textContent;
+        getGamePop(gameSearch);
+
+    }
+
+
+}
 
 
 
 var getGamePop = function (Game) {
-    var twitchURL = 'https://twitch-game-popularity.p.rapidapi.com/game?name=' + Game + '&year=2022';
-
+    var twitchURL = ('https://twitch-game-popularity.p.rapidapi.com/game?name=' + Game + '&year=2021');
     fetch(twitchURL, twitchPopAPI)
 	.then(function (response) {
         if (response.ok) {
-            response.json().then(function (data) {
-                displayGame(data, Game);
-            });
-        } else {
-            alert('Error: ' + response.statusText);
+            console.log(response.json());
         }
-    });
 
-};
+    });
+}
+
+gameHandler();
 
 
