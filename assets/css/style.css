@@ -46,7 +46,8 @@ input{
     justify-content: center;
 }
 
-section p{
+section h2{
+    margin-top: 40px;
     text-align: center;
     color: black;
 }
@@ -91,6 +92,8 @@ section p{
 
 
 .card-content{
+    background-color: rgb(95, 88, 88);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -99,6 +102,8 @@ section p{
     padding-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 7px;
     width: 600px;
 }
 .card-content:hover{
