@@ -1,4 +1,4 @@
-var gameNameEL = document.querySelector('#game-name')
+var gameNameEL = document.querySelector('.price-info')
 
 
 
@@ -16,7 +16,7 @@ var getGame = function() {
     var gameName = queryString.split('=')[1];
 
     if (gameName) {
-        gameNameEL.textContent = gameName;
+        priceInfoEL.textContent = priceInfo;
         getGamePrices(gameName);
     } else {
         document.location.replace('./index.html');
@@ -26,7 +26,7 @@ var getGame = function() {
 
 var getGamePrices = function(gameName) {
     var PricesURL = 'https://game-prices.p.rapidapi.com/games?title=' + gameName + '&region=us&limit=10';
-    fetch(PricesURL).then(function (response) {
+    fetch(PricesURL, gamePricesAPI).then(function (response) {
         if (response.ok) {
             response.json()
         } else {
