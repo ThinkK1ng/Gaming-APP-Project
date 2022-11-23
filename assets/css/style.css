@@ -53,8 +53,9 @@ section p{
   }
   
   .game-info-img {
-    height: 37.5rem;
-    width: 37.5rem;
+    height: 35rem;
+    width: 30rem;
+    margin-bottom: 100px;
   }
 
   .price-info {
@@ -67,14 +68,20 @@ section p{
     justify-content: center;
     margin-left: auto;
     margin-right: 65px;
+    margin-bottom: 100px;
+    background-color: #04d1b2;
   }
 
   .price-info h2 {
+    box-sizing: border-box;
+    height: 50px;
     color: black;
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-size: 30px;
-    padding: 20px;
   }
+
 
 .card-content{
     display: flex;
