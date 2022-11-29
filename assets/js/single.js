@@ -13,11 +13,11 @@ var gamePricesAPI = {
 
 var getGame = function() {
     var queryString = document.location.search;
-    var gameName = queryString.split('=')[1];
+    var priceInfo = queryString.split('=')[1];
 
-    if (gameName) {
+    if (priceInfo) {
         priceInfoEL.textContent = priceInfo;
-        getGamePrices(gameName);
+        getGamePrices(priceInfo);
     } else {
        // document.location.replace('./index.html');
     }
@@ -30,8 +30,8 @@ var getGamePrices = function(gameName) {
         if (response.ok) {
             //console.log(response);
             response.json().then(function (data) {
-                console.log(response);
-                displayPrices(data);
+                console.log(data);
+                displayPrices(data.games);
             });
         } else {
            // document.location.replace('./index.html');
@@ -46,16 +46,20 @@ var displayPrices = function (gamePrices) {
         return;
     }
     for (var i = 0; i < gamePrices.length; i++) {
-        var priceEl = document.createElement('a');
-        priceEl.classList = 'list-item flex-row justify-space-between align-center';
-        priceEl.setAttribute('href', gamePrices[i].url);
-        priceEl.setAttribute('target', '_blank');
-
-        var gameEl = document.createElement('span');
-        gameEl.textContent = gamePrices[i].seller;
-        priceEl.appendChild(gameEl);
-
+        var stores = gamePrices[i].stores;
+        for(var j = 0; j < stores.length; j++){
+           // console.log(stores[j]);
+            var gameEl = document.createElement('span');
+            gameEl.textContent = stores[j].seller + ": $" + stores[j].price;
+            var priceEl = document.createElement('a');
+            priceEl.innerHTML = gameEl.innerHTML;
+            priceEl.classList = 'list-item flex-row justify-space-between align-center';
+            priceEl.setAttribute('href', stores[j].url);
+            priceEl.setAttribute('target', '_blank');
+            priceInfoEL.appendChild(priceEl);
+            priceInfoEL.innerHTML += "<br>";
+        }
     }
-}
+};
 
 getGame();

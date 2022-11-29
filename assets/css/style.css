@@ -80,6 +80,8 @@ section h2{
     margin-right: 65px;
     margin-bottom: 100px;
     background-color: #04d1b2;
+    font-size: 35px;
+    display: block;
   }
 
   .price-info h2 {
