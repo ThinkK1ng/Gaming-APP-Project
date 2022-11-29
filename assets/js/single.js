@@ -1,4 +1,4 @@
-var gameNameEL = document.querySelector('.price-info')
+var priceInfoEL = document.querySelector('.price-info')
 
 
 
@@ -19,7 +19,7 @@ var getGame = function() {
         priceInfoEL.textContent = priceInfo;
         getGamePrices(gameName);
     } else {
-        document.location.replace('./index.html');
+       // document.location.replace('./index.html');
     }
 };
 
@@ -28,9 +28,34 @@ var getGamePrices = function(gameName) {
     var PricesURL = 'https://game-prices.p.rapidapi.com/games?title=' + gameName + '&region=us&limit=10';
     fetch(PricesURL, gamePricesAPI).then(function (response) {
         if (response.ok) {
-            response.json()
+            //console.log(response);
+            response.json().then(function (data) {
+                console.log(response);
+                displayPrices(data);
+            });
         } else {
-            document.location.replace('./index.html');
+           // document.location.replace('./index.html');
         }
     });
 }
+
+
+var displayPrices = function (gamePrices) {
+    if (gamePrices.length === 0) {
+        priceInfoEL.textContent = 'No prices for this game!';
+        return;
+    }
+    for (var i = 0; i < gamePrices.length; i++) {
+        var priceEl = document.createElement('a');
+        priceEl.classList = 'list-item flex-row justify-space-between align-center';
+        priceEl.setAttribute('href', gamePrices[i].url);
+        priceEl.setAttribute('target', '_blank');
+
+        var gameEl = document.createElement('span');
+        gameEl.textContent = gamePrices[i].seller;
+        priceEl.appendChild(gameEl);
+
+    }
+}
+
+getGame();
