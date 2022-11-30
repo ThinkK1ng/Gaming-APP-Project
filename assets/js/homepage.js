@@ -39,13 +39,20 @@ var getGamePop = function (Game, cardIndex) {
 }).then(function (data) {
     cardContentEl[cardIndex].innerHTML = data[0].Game + '<br>' + data[0].Rank;
     //testName.textContent = data[0].Rank
-}) }
+}) };
 
 
-    // var rankEl= document.createElement('a');
-    // rankEl.setAttribute('href', './prices.html?game=' + cardContent);
+    
 
+   function input(event) {
+    event.preventDefault();
 
+    var inputVal = document.querySelector('#search-input').value;
+    console.log(inputVal);
+    var queryString = './prices.html?game=' + inputVal;
+    location.assign(queryString);
+   }
+   gameInputEL.addEventListener('submit', input);
 gameHandler();
 
 
